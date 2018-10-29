@@ -80,3 +80,71 @@ Random r;
 
  lb.addMouseListener(new MouseAdapter(){
 
+
+  public void mouseClicked(MouseEvent me)
+  {
+
+    
+  // Create a beep sound when clicked to notify
+
+  Toolkit.getDefaultToolkit().beep();
+
+
+  // Also print it!
+i++;
+  System.out.println("Caught!");
+if(i>=4)
+{
+long endTime = System.currentTimeMillis();
+long elapsedMilliSeconds= endTime - startTime;
+double elapsedSeconds = elapsedMilliSeconds / 1000.0;
+System.out.println("Caught 5 times in: "+elapsedSeconds+" seconds");
+//Thread.sleep(5000);
+if(elapsedSeconds<=15)
+{
+System.out.print("\n win ");
+}
+else 
+System.out.print("\n loose");
+System.exit(0);
+}
+  
+  }
+
+
+ });
+
+
+ // Maximize the frame
+
+ setExtendedState(MAXIMIZED_BOTH);
+
+
+ }
+
+
+ public static void main(String args[])
+ {
+
+long startTime = System.currentTimeMillis();
+ // Create Scanner object
+//CatchTheRat r=new CatchTheRat(startTime);
+ Scanner s=new Scanner(System.in);
+
+
+ // Let the user enter his capability of catching the rat!
+
+ System.out.println("Enter the speed");
+
+
+ // Read the input
+
+ int k=s.nextInt();
+
+
+ // Create the frame and send the value of k
+
+new CatchTheRat(k);
+ }
+
+} 
